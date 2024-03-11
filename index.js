@@ -9,7 +9,6 @@ function reqbro(url, time) {
 
 async function callback(url) {
   const res = await axios.get(url)
-  console.log(res)
   if (res.status === 200) {
     const now = new Date()
     console.log('url fetched! at ' + now)
