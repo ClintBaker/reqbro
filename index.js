@@ -2,8 +2,8 @@ import axios from 'axios'
 
 console.log('GO FOR REQBRO')
 
-function reqbro(url) {
-  const interval = setInterval(callback, 3600000, url)
+function reqbro(url, interval) {
+  const interval = setInterval(callback, interval, url)
 }
 
 async function callback(url) {
@@ -12,4 +12,4 @@ async function callback(url) {
   console.log(res)
 }
 
-reqbro('https://gcr-7rlp.onrender.com/')
+reqbro('https://gcr-7rlp.onrender.com/', 3600000)
