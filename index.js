@@ -1,21 +1,22 @@
-import axios from 'axios'
+import express from 'express'
+import reqbro from './reqbro.js'
 
-console.log('GO FOR REQBRO')
+const app = express()
 
-function reqbro(url, time) {
-  callback(url)
-  const interval = setInterval(callback, time, url)
-}
-
-async function callback(url) {
-  const res = await axios.get(url)
-  if (res.status === 200) {
-    const now = new Date().toLocaleDateString()
-    console.log(`${url} fetched! at ` + now)
-  } else {
-    throw new Error('Unable to fetch URL')
-  }
-}
+const PORT = process.env.PORT || 3002
 
 // GOLF COURSE RANKER EVERY 14 MINUTES
 reqbro('https://gcr-7rlp.onrender.com/', 840000)
+
+app.get('/', (req, res, next) => {
+  res.send('GO FOR REQBRO')
+})
+
+app.get('*', (req, res, next) => {
+  res.send('GO FOR REQBRO')
+})
+
+app.listen(PORT, () => {
+  console.log('GO FOR REQBRO')
+  console.log(`app is listening on port ${PORT}`)
+})
