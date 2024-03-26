@@ -5,8 +5,12 @@ const app = express()
 
 const PORT = process.env.PORT || 3002
 
+const fourteenMin = 840000
+
 // GOLF COURSE RANKER EVERY 14 MINUTES
-reqbro('https://gcr-7rlp.onrender.com/', 840000)
+reqbro('https://gcr-7rlp.onrender.com/', fourteenMin)
+// JLB COMPANIES
+reqbro('https://www.jlbcompanies.com/', fourteenMin)
 
 app.get('/', (req, res, next) => {
   res.send('GO FOR REQBRO')
