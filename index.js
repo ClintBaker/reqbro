@@ -8,9 +8,9 @@ const PORT = process.env.PORT || 3002
 const fourteenMin = 840000
 
 // GOLF COURSE RANKER EVERY 14 MINUTES
-reqbro('https://gcr-7rlp.onrender.com/', fourteenMin)
+reqbro('https://gcr-7rlp.onrender.com/', 840000)
 // JLB COMPANIES
-reqbro('https://www.jlbcompanies.com/', fourteenMin)
+reqbro('https://www.jlbcompanies.com/', 840000)
 
 app.get('/', (req, res, next) => {
   res.send('GO FOR REQBRO')

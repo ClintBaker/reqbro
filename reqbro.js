@@ -11,7 +11,8 @@ async function callback(url) {
     const now = new Date().toLocaleDateString()
     console.log(`${url} fetched! at ` + now)
   } else {
-    throw new Error('Unable to fetch URL')
+    console.log(`error fetching ${url}`)
+    console.log(res.status)
   }
 }
 
